@@ -78,7 +78,7 @@ include_once('../conexao/conexao.php');
           <td> 
             <div class="btn-group" role="group" aria-label="Exemplo básico">
                <?php echo"<a type='button' class='btn btn-primary' style='margin:5px;color:white;' href='menu/edit_menu.php?id=" . $rows_menu['id']."'>editar</a>"?>
-              <?php echo "<a type='button' class='btn btn-danger' style='margin:5px; color:white;' href='manager/proc_delete_user.php?id=". $rows_menu['id']. "'>Apagar</a>"?>
+              <?php echo "<a type='button' class='btn btn-danger' style='margin:5px; color:white;' href='menu/proc_delete_menu.php?id=". $rows_menu['id']. "'>Apagar</a>"?>
             </div>
           </td>
           

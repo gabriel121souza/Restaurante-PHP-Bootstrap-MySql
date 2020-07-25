@@ -3,12 +3,11 @@ session_start();
 
 include_once("../../conexao/conexao.php");
 
-
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
-$result_manager = "SELECT * FROM managers WHERE id = '$id'";
- $resultado_manager = mysqli_query($conn, $result_manager);
+$result_menu = "SELECT * FROM menu WHERE id = '$id'";
+ $resultado_menu = mysqli_query($conn, $result_menu);
  
- $row_manager = mysqli_fetch_assoc($resultado_manager);
+ $row_menu = mysqli_fetch_assoc($resultado_menu);
 ?>
 
 <!DOCTYPE html>
@@ -39,31 +38,40 @@ include_once("../menu_admin.php");
 
 ?>
 <div class="container theme-showcase" role="main">
+
+    <div class="page-header">
+    <br>
     <?php
-        if(isset($_SESSION['msg'])){
+        if(isset($_SESSION['msg'])){?>
+            <div class="alert alert-danger" role="alert">
+            <?php
             echo $_SESSION['msg'];
             unset($_SESSION['msg']);
         }
     ?>
-    <form  method="POST" action="proc_edit_user.php">
+    </div>
+    <form  method="POST" action="proc_edit_menu.php">
         <div class="form-group">
-            <br><br> <br>
-            <h2>Editar O Gerente</h2>
-            <input type="hidden" name="id" value="<?php echo $row_manager['id']; ?>">
+            <br>
+            <h2>Editar O Menu</h2>
+            <input type="hidden" name="id" value="<?php echo $row_menu['id']; ?>">
             <label>Nome: </label>
-            <input type="text" name="name" class="form-control" value="<?php echo $row_manager['name']; ?>">
+            <input type="text" name="name" class="form-control" value="<?php echo $row_menu['name']; ?>">
             <br>
-            <label>Email: </label>
-            <input type="email" name="email" class="form-control" value="<?php echo $row_manager['email']; ?>">
+            <label>Categoria: </label>
+            <input type="text" name="category" class="form-control" value="<?php echo $row_menu['category'];?>">
             <br>
-            <label>Usuario: </label>
-            <input type="text" name="user" class="form-control" value="<?php echo $row_manager['user']; ?> ">
+            <label>Preco: </label>
+            <input type="text" name="price" class="form-control" value="<?php echo $row_menu['price']; ?>">
             <br>
-            <label>Senha: </label>
-            <input type="text" name="password" class="form-control" value="<?php echo $row_manager['password']; ?>">
+            <textarea name="description" cols="60" rows="5"><?php echo $row_menu['description']; ?></textarea>
             <br>
+            <br>
+
+
+
             <button Type="submit" class="btn btn-success">Editar</button>
-            <a href="../listarUsuario.php" type="button" class ="btn btn-danger" style="margin-left:10px;">voltar</a>
+            <a href="../listarMenu.php" type="button" class ="btn btn-danger" style="margin-left:10px;">voltar</a>
 
     </form>
 </div> <!-- /container -->

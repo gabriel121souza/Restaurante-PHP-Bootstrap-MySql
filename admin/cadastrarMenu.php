@@ -59,15 +59,15 @@
             
             <div class="form-group">
                 <label for="inputEstado">Categoria</label>
-                    <select id="inputEstado" class="form-control">
-                        <option selected >Pizza</option>
-                        <option>Hamburguer</option>
-                        <option>Bebidas</option>
+                    <select id="inputEstado" class="form-control" name="category">
+                        <option selected  name="pizza" value="Pizza">Pizza</option>
+                        <option name="hamburguer" value="Hamburguer">Hamburguer</option>
+                        <option name="Bebibas" value="bebidas">Bebidas</option>
                     </select>
             </div>
             <div class="form-group">
                 <label>Preco</label>
-                <input type="text" name="preco" class="form-control" placeholder="digite o preco sem ." required>
+                <input type="text" name="price" class="form-control" placeholder="digite o preco sem ." required>
             </div>
     
             <div class="mb-3">
