@@ -51,7 +51,7 @@
     ?>
 
     <div class="page-header">
-        <form method="POST" action="menu/proce_cad_menu.php">
+        <form method="POST" action="menu/proce_cad_menu.php" enctype="multipart/form-data">
            
             <div class="form-group">
                 <label>Nome </label>
@@ -77,8 +77,11 @@
                 faça um resumo do prato.
                 </div>
             </div>
-                        
-           
+            <div class="form-group">
+                <div class="col-sm-4">
+                    Imagem <span style="color:red">*</span><input type="file" name="img1" required>
+                </div>  
+           </div>
             <input type="submit"  name="btn-cad" class="btn btn-primary" value="Cadastrar">
         </form>
 
